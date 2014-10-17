@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My App</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+</head>
+<body>
+<div>
+    <div>
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/about">About</a></li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li>
+                    <div id="login-area"></div>
+                </li>
+                <li>
+                    <div>Hello, {{ user.uuid }}</div>
+                </li>
+
+                <li>
+                    &nbsp;
+                </li>
+                <li class="active"><a href="/disclaimer">Disclaimer</a></li>
+                <li>
+                    &nbsp;
+                </li>
+
+            </ul>
+        </div>
+
+
+        <div id="cookies-warning"></div>
+
+
+        <div id="page-content">
+            Page content goes here
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
+  
