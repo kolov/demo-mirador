@@ -23,27 +23,26 @@
 (defsnippet login-buttons "pages/snippets.html" [:div#login-buttons] [])
 
 (deftemplate main-template "pages/template.html" [req main]
-             [:div#cookies-warning]
-             (substitute (cookies-warning))
-             [:div#login-area] (login-buttons)
+             [:div#cookies-warning] (substitute (cookies-warning))
+             [:div#login-area] (substitute (login-buttons))
              [:div#page-content] main
              )
 
 (defsnippet index-content "pages/index.html"
             [:div#main] []
+            [:h1 :div#page-title] (content "Editing")
             )
-
 
 (defn welcome [req]
       (main-template req (substitute (index-content))))
 
 (defn index [req]
-      (->> (welcome req) (html-response req)))
+      (html-response (welcome req)))
 
 
 (defroutes routes
            (GET "/" req (index req))
-           (r/resources "/static" {:root "resources/static"})
+           (r/resources "/static" {:root "static"})
            )
 
 (def app (-> routes
